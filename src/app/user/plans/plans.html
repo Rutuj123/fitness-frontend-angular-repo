@@ -1,0 +1,48 @@
+<div class="plans-container">
+  <h2 class="title">Membership Plans</h2>
+  <p class="subtitle">Choose the plan that fits your fitness goals</p>
+
+  <div class="plans-grid">
+    
+    <!-- BASIC PLAN -->
+    <div class="plan-card">
+      <h3>Basic</h3>
+      <p class="price">₹999 / month</p>
+      <ul>
+        <li>✔ Gym Access</li>
+        <li>✔ Cardio Equipment</li>
+        <li>✖ Personal Trainer</li>
+        <li>✖ Group Classes</li>
+      </ul>
+      <button class="btn" (click)="selectPlan('REASONABLE', 1999)">Choose Plan</button>
+    </div>
+
+    <!-- STANDARD PLAN -->
+    <div class="plan-card popular">
+      <span class="badge">Most Popular</span>
+      <h3>Standard</h3>
+      <p class="price">₹1999 / month</p>
+      <ul>
+        <li>✔ Gym + Cardio</li>
+        <li>✔ Group Classes</li>
+        <li>✔ Diet Plan</li>
+        <li>✖ Personal Trainer</li>
+      </ul>
+      <button class="btn primary" (click)="selectPlan('STANDARD', 1999)">Choose Plan</button>
+    </div>
+
+    <!-- PREMIUM PLAN -->
+    <div class="plan-card">
+      <h3>Premium</h3>
+      <p class="price">₹2999 / month</p>
+      <ul>
+        <li>✔ All Gym Access</li>
+        <li>✔ Personal Trainer</li>
+        <li>✔ Diet Consultation</li>
+        <li>✔ Priority Support</li>
+      </ul>
+      <button class="btn" (click)="selectPlan('PREMIUM', 1999)">Choose Plan</button>
+    </div>
+
+  </div>
+</div>

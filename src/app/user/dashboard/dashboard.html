@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2>Welcome to Smart Gym 💪</h2>
+
+  <div class="row mt-4">
+    <div class="col-md-4" *ngFor="let f of features">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5>{{ f.title }}</h5>
+          <p>{{ f.desc }}</p>
+
+          <button class="btn btn-outline-primary"
+                  [routerLink]="f.link">
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h3>Add Member</h3>
+
+  <div class="card shadow p-4 col-md-6">
+    <div class="mb-3">
+      <label>Name</label>
+      <input class="form-control" [(ngModel)]="member.name">
+    </div>
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input class="form-control" [(ngModel)]="member.email">
+    </div>
+
+    <div class="mb-3">
+      <label>Phone</label>
+      <input class="form-control" [(ngModel)]="member.phone">
+    </div>
+
+    <div class="mb-3">
+      <label>Membership</label>
+      <select class="form-select" [(ngModel)]="member.membershipType">
+        <option>GOLD</option>
+        <option>SILVER</option>
+      </select>
+    </div>
+
+    <button class="btn btn-success" (click)="addMember()">Add Member</button>
+  </div>
+</div>

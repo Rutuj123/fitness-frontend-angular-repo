@@ -1,0 +1,11 @@
+<section>
+<form (ngSubmit)="create()" class="container mt-4">
+  <input class="form-control mb-2" placeholder="Class Name" [(ngModel)]="c.name" name="n">
+  <input class="form-control mb-2" placeholder="Trainer" [(ngModel)]="c.trainer" name="t">
+  <input class="form-control mb-2" placeholder="Schedule" [(ngModel)]="c.schedule" name="s">
+  <input class="form-control mb-2" placeholder="Capacity" [(ngModel)]="c.capacity" name="c">
+
+  <button class="btn btn-primary">Create Class</button>
+</form>
+
+</section>

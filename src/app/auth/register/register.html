@@ -1,0 +1,23 @@
+<p>User Registration</p>
+<section id="contact" class="bg-dark text-white py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Register Here</h2>
+   
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        
+        <form (ngSubmit)="register()">
+  <input class="form-control mb-3" type="text" placeholder="Name" [(ngModel)]="data.username" name="username" required>
+  <input class="form-control mb-3" type="text" placeholder="Password" [(ngModel)]="data.password" name="password" required>
+  <select class="form-control mb-3" type="text" placeholder="Role" [(ngModel)]="data.role" name="role">
+    <option value="TRAINER">TRAINER</option>
+     <option value="ADMIN">ADMIN</option>
+      <option value="USER">USER</option>
+  </select>
+  <button class="btn btn-warning w-100" type="submit">Submit</button>
+</form>
+      </div>
+    </div>
+  </div>
+</section>

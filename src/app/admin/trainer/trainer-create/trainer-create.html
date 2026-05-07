@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h3>Add Trainer</h3>
+
+  <form (ngSubmit)="create()">
+    <input class="form-control mb-2"
+           placeholder="Name"
+           [(ngModel)]="trainer.name"
+           name="n">
+
+    <input class="form-control mb-2"
+           placeholder="Specialization"
+           [(ngModel)]="trainer.specialization"
+           name="s">
+
+    <input class="form-control mb-2"
+           placeholder="Experience (years)"
+           type="number"
+           [(ngModel)]="trainer.experience"
+           name="e">
+
+    <button class="btn btn-primary">
+      Add Trainer
+    </button>
+  </form>
+</div>
+

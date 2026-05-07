@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h3 class="mb-3">Members</h3>
+
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border"></div>
+  </div>
+
+  <table *ngIf="!loading" class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Membership</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let m of members; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ m.name }}</td>
+        <td>{{ m.email }}</td>
+        <td>{{ m.phone }}</td>
+        <td>
+          <span class="badge bg-success">
+            {{ m.membershipType }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="members.length === 0 && !loading" class="alert alert-info">
+    No members found
+  </div>
+</div>

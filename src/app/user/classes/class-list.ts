@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+import { ClassService } from './class.service';
+import { CommonModule } from '@angular/common';
+import { routes } from '../../app.routes';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-class-list',
+  imports: [CommonModule],
+  templateUrl: './class-list.html',
+  styleUrl: './class-list.css',
+})
+export class ClassList {
+  classes: any[]=[];
+paidUser = true; // later from token
+constructor(private service:ClassService,private router: Router){
+  this.service.getAll().subscribe(data=>this.classes=data);
+}
+
+book(id:number){
+  this.service.book(id).subscribe(()=>alert('Class booked successfully'));
+}
+makePayment(){
+this.router.navigate(['/payment']);
+}
+}
