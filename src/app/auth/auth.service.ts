@@ -2,19 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { isTokenExpired } from './auth.util';
 import { Router } from '@angular/router';
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   //private API = 'http://localhost:8080/auth';
-    private API = 'http://localhost:8080/auth';
+    private API = environment.apiUrl;
   constructor(private http:HttpClient,private router:Router){}
   login(data:any){
-    return this.http.post<any>(`${this.API}/login`,data);
+    return this.http.post<any>(`${this.API}/auth/login`,data);
   }
   register(data:any){
-   return  this.http.post<any>(`${this.API}/register`,data);
+   return  this.http.post<any>(`${this.API}/auth/register`,data);
   }
 
   saveAuth(token:string,role:string,userId:string){
