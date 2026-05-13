@@ -9,7 +9,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     return next(req);
   }
   const token=localStorage.getItem('token');
-  console.log("token      ...."+token)
+  console.log("token===      ...."+token);
+  // FIRST check expiration
+  if (token && isTokenExpired()) {
+    authService.logout();
+    return next(req);// stop attaching token
+  }
   if(token){
     req=req.clone({
        setHeaders:{
@@ -17,9 +22,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
        }
     });
   }
-  if (isTokenExpired()) {
-    authService.logout();
-    return next(req); // stop attaching token
-  }
+  
  return next(req);
 };

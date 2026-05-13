@@ -20,6 +20,7 @@ export const routes: Routes = [
     {path:'unauthorized',component:Unauthorized},
     {
       path : 'user',
+      component: Dashboard,
       canActivate : [authGuard,userGuardGuard],
       children:[
         {path:'classes',component:ClassList},

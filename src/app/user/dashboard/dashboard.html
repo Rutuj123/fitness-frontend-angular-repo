@@ -1,7 +1,23 @@
-<div class="container mt-4">
-  <h2>Welcome to Smart Gym 💪</h2>
+<nav class="navbar">
+  <div class="container nav-wrap">
 
-  <div class="row mt-4">
+    <div class="hamburger" (click)="toggleMenu()">
+      ☰
+    </div>
+
+    <ul class="nav-links" [class.active]="mobileMenu">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/user/classes" (click)="closeMenu()">classes</a></li>
+      <li><a routerLink="/user/trainers" (click)="closeMenu()">trainers</a></li>
+      <li><a routerLink="/user/plans" (click)="closeMenu()">plans</a></li>
+    
+    </ul>
+   </div>
+</nav>
+<div class="container mt-4">
+  <h2>Welcome to Fitness Club 💪</h2>
+
+  <!-- <div class="row mt-4">
     <div class="col-md-4" *ngFor="let f of features">
       <div class="card shadow">
         <div class="card-body">
@@ -12,8 +28,10 @@
                   [routerLink]="f.link">
             View
           </button>
+          
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <router-outlet></router-outlet>
 </div>
