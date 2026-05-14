@@ -22,7 +22,7 @@ export class ClassService {
       'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
     }); */
-   return this.http.post(`${this.API}`,data);  //,{headers}
+   return this.http.post(`${this.API}/classes`,data);  //,{headers}
   }
 
 }
