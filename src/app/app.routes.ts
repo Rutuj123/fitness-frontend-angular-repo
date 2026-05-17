@@ -11,9 +11,13 @@ import { adminGuardGuard } from './admin-guard-guard';
 import { Payment } from './user/payment/payment';
 import { Unauthorized } from './unauthorized/unauthorized';
 import { Plans } from './user/plans/plans';
-
+import { Home } from './landing/home/home'
+import { OurTrainers } from './landing/our-trainers/our-trainers'
 export const routes: Routes = [
-    {path:'',redirectTo:'login',pathMatch:'full'},
+   {path:'',redirectTo:'home',pathMatch:'full'},
+  // {path:'home',component:Home},
+  {path:'home',component:Home,},
+   
     {path:'login',component:Login},
     {path:'register',component:Register},
     {path:'userdashboard',component:Dashboard},

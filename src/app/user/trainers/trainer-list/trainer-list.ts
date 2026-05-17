@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { TrainerService } from '../../../services/trainer-service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-trainer-list',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './trainer-list.html',
   styleUrl: './trainer-list.css',
 })

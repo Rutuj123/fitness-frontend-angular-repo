@@ -1,3 +1,6 @@
-body {
+/* body {
   background-color: #f8f9fa;
-}
+} */
+
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'aos/dist/aos.css';

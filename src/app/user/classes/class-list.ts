@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ClassService } from './class.service';
-import { CommonModule } from '@angular/common';
+
 import { routes } from '../../app.routes';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-class-list',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './class-list.html',
   styleUrl: './class-list.css',
 })

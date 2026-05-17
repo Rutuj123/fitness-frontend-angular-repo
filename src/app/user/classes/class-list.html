@@ -2,26 +2,28 @@
   <h3>Gym Classes</h3>
 
   <div class="row mt-3">
-    <div class="col-md-4" *ngFor="let c of classes">
-      <div class="card shadow">
-        <div class="card-body">
-          <h5>{{ c.name }}</h5>
-          <p>Trainer: {{ c.trainer }}</p>
-          <p>Schedule: {{ c.schedule }}</p>
-
-          <button class="btn btn-success w-100"
-                  *ngIf="paidUser"
-                  (click)="book(c.id)">
-            Book Class
-          </button>
-
-          <button class="btn btn-secondary w-100"
-                  *ngIf="!paidUser"
-                  disabled  onclick="makePayment()">
-            Payment Required
-          </button>
+    @for (c of classes; track c) {
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5>{{ c.name }}</h5>
+            <p>Trainer: {{ c.trainer }}</p>
+            <p>Schedule: {{ c.schedule }}</p>
+            @if (paidUser) {
+              <button class="btn btn-success w-100"
+                (click)="book(c.id)">
+                Book Class
+              </button>
+            }
+            @if (!paidUser) {
+              <button class="btn btn-secondary w-100"
+                disabled  onclick="makePayment()">
+                Payment Required
+              </button>
+            }
+          </div>
         </div>
       </div>
-    </div>
+    }
   </div>
 </div>

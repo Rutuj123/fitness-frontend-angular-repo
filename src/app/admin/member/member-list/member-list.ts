@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../member.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-member-list',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './member-list.html',
   styleUrl: './member-list.css',
 })
