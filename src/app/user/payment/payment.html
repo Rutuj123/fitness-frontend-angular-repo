@@ -6,6 +6,11 @@
             <label>Amount</label>
             <input type="number" [(ngModel)]="amount" name="amount" class="form-control" required>
         </div>
+        <input
+    type="text"
+    placeholder="UTR Number"
+    [(ngModel)]="utrNumber"
+    name="utr">
         <div class="mb-3">
             <label>Payment Method</label>
             <select [(ngModel)]="paymentMethod" name="paymentMethod" class="form-control">
@@ -14,6 +19,9 @@
                 <option value="CASH">CASH</option>
             </select>
         </div>
+         <input
+    type="file"
+    (change)="onFileSelected($event)" placeholder="Attached screenshot of payment">
         <button class="btn btn-success">Pay Now</button>
     </form>
 </div>>

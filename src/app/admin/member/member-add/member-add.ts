@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class MemberAdd {
  constructor(private memberService:MemberService,private router:Router){} 
-member={name:"",email:"",phone:"",membershipType:""};
+member={name:"",username:"",password:"",phone:"",age:"",membershipType:""};
 addMember(){
     this.memberService.addMember(this.member).subscribe({
        next:()=>{
@@ -19,7 +19,7 @@ addMember(){
  alert('Member created successfully');
        },
        error:()=>{
-
+  alert('Something Went Wrong');
        }
     })
 }

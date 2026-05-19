@@ -12,7 +12,7 @@
 
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a routerLink="/admin/" class="nav-link text-white">
+        <a routerLink="/admin/adminDashboard" class="nav-link text-white">
           Dashboard
         </a>
       </li>
@@ -48,6 +48,11 @@
           Class List
         </a>
       </li>
+      <li class="nav-item">
+        <a routerLink="/admin/paymentList" class="nav-link text-white">
+         Payment Request
+        </a>
+      </li>
     </ul>
   </div>
 
@@ -55,47 +60,7 @@
   <div class="p-4 flex-fill">
     <router-outlet></router-outlet>
     
-<div class="container mt-4">
 
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card shadow text-center">
-        <div class="card-body">
-          <h5>Members</h5>
-          <p class="display-6">120</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card shadow text-center">
-        <div class="card-body">
-          <h5>Trainers</h5>
-          <p class="display-6">15</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card shadow text-center">
-        <div class="card-body">
-          <h5>Classes</h5>
-          <p class="display-6">18</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card shadow text-center">
-        <div class="card-body">
-          <h5>Revenue</h5>
-          <p class="display-6">₹85,000</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
   </div>
 
 </div>

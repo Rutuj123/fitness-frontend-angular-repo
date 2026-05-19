@@ -1,7 +1,20 @@
 <section>
 <form (ngSubmit)="create()" class="container mt-4">
   <input class="form-control mb-2" placeholder="Class Name" [(ngModel)]="c.name" name="n">
-  <input class="form-control mb-2" placeholder="Trainer" [(ngModel)]="c.trainer" name="t">
+  <select class="form-control mb-2" [(ngModel)]="selectedTrainer" name="trainer">
+
+    <option [ngValue]="null">
+    Choose Trainer
+    </option>
+
+    <option
+    *ngFor="let trainer of trainers"
+    [ngValue]="trainer">
+
+    {{ trainer.name }}
+
+  </option></select>
+ 
   <input class="form-control mb-2" placeholder="Schedule" [(ngModel)]="c.schedule" name="s">
   <input class="form-control mb-2" placeholder="Capacity" [(ngModel)]="c.capacity" name="c">
 

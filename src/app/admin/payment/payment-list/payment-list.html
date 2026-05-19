@@ -11,39 +11,45 @@
     <table class="table table-bordered table-striped">
       <thead class="table-dark">
         <tr>
-          <th>#</th>
-          <th>Name</th>
+            <th>#</th>
+          <th>memberId</th>
+          <th>amount</th>
           <th>Email</th>
-          <th>Phone</th>
-          <th>Membership</th>
-          <th>Actions</th>
+          <th>paymentMethod</th>
+          <th>paymentDate</th>
+          <th>screenshot</th>
+          <th>status</th>
+           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        @for (m of members; track m; let i = $index) {
+        @for (m of payments; track m; let i = $index) {
           <tr>
             <td>{{ i + 1 }}</td>
-            <td>{{ m.name }}</td>
+            <td>{{ m.memberId }}</td>
+            <td>{{ m.amount }}</td>
             <td>{{ m.email }}</td>
-            <td>{{ m.phone }}</td>
+            <td>{{ m.paymentMethod }}</td>
+            <td>{{ m.paymentDate }}</td>
             <td>
-              <span class="badge bg-success">
-                {{ m.membershipType }}
-              </span>
+            <a
+           [href]="'http://localhost:8080/gym-uploads/' + m.screenshot"
+           target="_blank">
+              View Screenshot
+            </a>
             </td>
-            <td>
+            <td>{{ m.status }}</td>
+           <td>
   <button
     class="btn btn-sm btn-primary me-2"
-    (click)="openEditModal(m)"
-  >
-    Edit
+    (click)="approve(m)">
+    Approve
   </button>
 
   <button
     class="btn btn-sm btn-danger"
-    (click)="confirmDelete(m.id)"
-  >
-    Delete
+    (click)="delete(m.id)">
+    Reject
   </button>
 </td>
           </tr>
@@ -52,7 +58,7 @@
     </table>
   }
 
-  @if (members.length === 0 && !loading) {
+  @if (payments.length === 0 && !loading) {
     <div class="alert alert-info">
       No members found
     </div>
@@ -75,16 +81,16 @@
       ></button>
     </div>
 
-    <form (ngSubmit)="updateMember()">
+    <form (ngSubmit)="updatePaymentStatus()">
 
       <div class="mb-3">
-        <label>Name</label>
+        <label>MemberId</label>
 
         <input
           type="text"
           class="form-control"
-          [(ngModel)]="selectedMember.name"
-          name="name"
+          [(ngModel)]="selectedPayment.memberId"
+          name="memberId"
         />
       </div>
 
@@ -94,7 +100,7 @@
         <input
           type="email"
           class="form-control"
-          [(ngModel)]="selectedMember.email"
+          [(ngModel)]="selectedPayment.email"
           name="email"
         />
       </div>
@@ -105,30 +111,69 @@
         <input
           type="text"
           class="form-control"
-          [(ngModel)]="selectedMember.phone"
+          [(ngModel)]="selectedPayment.phone"
           name="phone"
         />
       </div>
-
       <div class="mb-3">
-        <label>Membership</label>
+        <label>Phone</label>
 
-        <select
-          class="form-select"
-          [(ngModel)]="selectedMember.membershipType"
-          name="membershipType"
-        >
-          <option>Basic</option>
-          <option>Premium</option>
-          <option>Elite</option>
-        </select>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedPayment.paymentMethod"
+          name="phone"
+        />
       </div>
+      <div class="mb-3">
+        <label>Phone</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedPayment.paymentDate"
+          name="paymentDate"
+        />
+      </div>
+      <div class="mb-3">
+        <label>utrNumber</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedPayment.utrNumber"
+          name="utrNumber"
+        />
+      </div>
+      <div class="mb-3">
+        <label>screenshot</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedPayment.screenshot"
+          name="screenshot"
+        />
+      </div>
+      <div class="mb-3">
+        <label>status</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedPayment.status"
+          name="status"
+        />
+      </div>
+      
+
+    
 
       <button
         type="submit"
         class="btn btn-success w-100"
       >
-        Update Member
+        Update Payment
       </button>
 
     </form>

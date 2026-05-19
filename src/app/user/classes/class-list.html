@@ -9,7 +9,7 @@
             <h5>{{ c.name }}</h5>
             <p>Trainer: {{ c.trainer }}</p>
             <p>Schedule: {{ c.schedule }}</p>
-            @if (paidUser) {
+            @if (bookButton) {
               <button class="btn btn-success w-100"
                 (click)="book(c.id)">
                 Book Class

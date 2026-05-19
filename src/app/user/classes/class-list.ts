@@ -13,7 +13,12 @@ import { Router } from '@angular/router';
 export class ClassList {
   classes: any[]=[];
 paidUser = true; // later from token
+role=localStorage.getItem('role');
+bookButton=false;
 constructor(private service:ClassService,private router: Router){
+ if(this.role=="USER"){
+  this.bookButton=true;
+   }
   this.service.getAll().subscribe(data=>this.classes=data);
 }
 

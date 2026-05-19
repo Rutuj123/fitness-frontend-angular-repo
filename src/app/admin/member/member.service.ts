@@ -22,7 +22,23 @@ addMember(data:any){
 
   console.log("token "+this.token);
   
-  return this.http.post<any>(`${this.API}/members/addMember`,data,{headers});
+  return this.http.post<any>(`${this.API}/auth/register`,data,{headers});
+}
+updateMember(data:any,id: number) {
+
+  return this.http.put(
+    `${this.API}/auth/updateMember/${id}`,
+    data
+  );
+
+}
+getMemberByUserId(id: number) {
+
+  return this.http.get(
+    `${this.API}/members/getMemberById/${id}`
+    
+  );
+
 }
 getAllMember(){
   const token = localStorage.getItem('token');

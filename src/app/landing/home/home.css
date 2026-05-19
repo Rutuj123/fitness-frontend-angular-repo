@@ -19,7 +19,7 @@ html {
 .hero-section {
   height: 100vh;
   position: relative;
-  background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438')
+  background: url('/FitnessHome.avif')
     center/cover no-repeat;
 }
 
@@ -28,7 +28,7 @@ html {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.85),
+    rgba(109, 106, 106, 0.85),
     rgba(0, 0, 0, 0.55)
   );
 }
@@ -382,7 +382,7 @@ html {
 }
 
 .testimonial-card p {
-  color: #d1d1d1;
+  color: #2a2626;
   line-height: 1.8;
   margin-bottom: 20px;
 }
@@ -451,3 +451,87 @@ html {
     transform: scale(1);
   }
 }
+.login-btn {
+
+  width: 60px;
+
+  height: 40px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+ #ab0fad,
+    #dd2476
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 8px 20px rgba(221, 36, 118, 0.35);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* HOVER EFFECT */
+
+.login-btn:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(221, 36, 118, 0.45);
+
+}
+
+/* CLICK EFFECT */
+
+.login-btn:active {
+
+  transform: scale(0.98);
+
+}
+
+/* SHINE ANIMATION */
+
+.login-btn::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 10px;
+  height: 10px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+
+  transition: 0.6s;
+}
+
+/* .login-btn:hover::before {
+
+  left: 100%;
+
+} */

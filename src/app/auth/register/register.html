@@ -1,5 +1,5 @@
-<p>User Registration</p>
-<section id="contact" class="bg-dark text-white py-5">
+<button routerLink="/home" class="login-btn">Back To Home</button>
+<section id="contact" class="bg-dark text-white py-5" style="height:600px;">
   <div class="container">
     <h2 class="text-center mb-4">Register Here</h2>
    
@@ -8,11 +8,13 @@
       <div class="col-md-6">
         
         <form (ngSubmit)="register()">
-  <input class="form-control mb-3" type="text" placeholder="Name" [(ngModel)]="data.username" name="username" required>
+  <input class="form-control mb-3" type="text" placeholder="Name" [(ngModel)]="data.name" name="name" required>
+  <input class="form-control mb-3" type="text" placeholder="Enter Email" [(ngModel)]="data.username" name="username" required>
   <input class="form-control mb-3" type="text" placeholder="Password" [(ngModel)]="data.password" name="password" required>
+  <input class="form-control mb-3" type="text" placeholder="Phone" [(ngModel)]="data.phone" name="phone" required>
+  <input class="form-control mb-3" type="text" placeholder="Age" [(ngModel)]="data.age" name="age" required>
   <select class="form-control mb-3" type="text" placeholder="Role" [(ngModel)]="data.role" name="role">
     <option value="TRAINER">TRAINER</option>
-     <option value="ADMIN">ADMIN</option>
       <option value="USER">USER</option>
   </select>
   <button class="btn btn-warning w-100" type="submit">Submit</button>

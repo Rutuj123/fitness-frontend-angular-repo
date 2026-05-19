@@ -13,10 +13,15 @@ import { ActivatedRoute } from '@angular/router';
 export class Payment implements OnInit{
 plan!:string;  
 amount!:number;
-paymentMethod: 'UPI' | 'CARD' | 'CASH'='UPI'
-
+paymentMethod: 'UPI' | 'CARD' | 'CASH'='UPI';
+ memberId:number= Number(localStorage.getItem('userId'));
 constructor(private paymentService:PaymentService,private router:ActivatedRoute){}
+  selectedFile!: File;
+  utrNumber = '';
+  onFileSelected(event: any) {
 
+  this.selectedFile = event.target.files[0];
+}
 ngOnInit(): void {
   this.router.queryParams.subscribe(params=>{
     this.plan=params['plan'],
@@ -26,14 +31,17 @@ ngOnInit(): void {
 
 pay(){
    console.log(localStorage);
-  const request:CreatePaymentRequest={
-   
-    
-    memberId: Number(localStorage.getItem('userId')),
-    amount: this.amount,
-    paymentMethod:this.paymentMethod
-  }
-  this.paymentService.makePayment(request).subscribe({
+ const formData = new FormData();
+  formData.append('file', this.selectedFile);
+
+  formData.append('utrNumber', this.utrNumber);
+
+  formData.append('memberId', this.memberId.toString());
+
+  formData.append('paymentMethod', this.paymentMethod);
+
+  formData.append('amount', this.amount.toString());
+  this.paymentService.makePayment(formData).subscribe({
    next:()=>alert("Payment Successful"),
    error:()=>alert("Payment Failed ❌")
   })

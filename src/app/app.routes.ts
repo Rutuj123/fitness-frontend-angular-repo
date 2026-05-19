@@ -12,7 +12,7 @@ import { Payment } from './user/payment/payment';
 import { Unauthorized } from './unauthorized/unauthorized';
 import { Plans } from './user/plans/plans';
 import { Home } from './landing/home/home'
-import { OurTrainers } from './landing/our-trainers/our-trainers'
+
 export const routes: Routes = [
    {path:'',redirectTo:'home',pathMatch:'full'},
   // {path:'home',component:Home},
@@ -38,13 +38,16 @@ export const routes: Routes = [
   component:Admin,
   canActivate: [authGuard,adminGuardGuard],
    children:[
-    {path:'dashboard',loadComponent:()=>import('./admin/admin').then(m=>m.Admin)},
+    {path:'',loadComponent:()=>import('./admin/admin-dashboard/admin-dashboard').then(m=>m.AdminDashboard)},
+      {path:'adminDashboard',loadComponent:()=>import('./admin/admin-dashboard/admin-dashboard').then(m=>m.AdminDashboard)},
     {path:'memberAdd',loadComponent:()=>import('./admin/member/member-add/member-add').then(m=>m.MemberAdd)},
     {path:'memberList',loadComponent:()=>import('./admin/member/member-list/member-list').then(m=>m.MemberList)},
     {path:'trainerAdd',loadComponent:()=>import('./admin/trainer/trainer-create/trainer-create').then(m=>m.TrainerCreate)},
     {path:'trainerList',loadComponent:()=>import('./user/trainers/trainer-list/trainer-list').then(m=>m.TrainerList)},
 {path:'classAdd',loadComponent:()=>import('./admin/classes/class-create').then(m=>m.ClassCreate)},
-{path:'classList',loadComponent:()=>import('./user/classes/class-list').then(m=>m.ClassList)}
+{path:'classList',loadComponent:()=>import('./user/classes/class-list').then(m=>m.ClassList)},
+{path:'paymentList',loadComponent:()=>import('./admin/payment/payment-list/payment-list').then(m=>m.PaymentList)}
+
  ]
   /* loadComponent: () =>
     import('./admin/admin').then(m => m.Admin)
