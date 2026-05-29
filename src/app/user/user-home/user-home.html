@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="container nav-wrap">
+
+    <!-- <div class="hamburger" (click)="toggleMenu()">
+      ☰
+    </div> -->
+    <button routerLink="/home" class="login-btn">Back To Home</button>
+
+    <ul class="nav-links" [class.active]="mobileMenu">
+      <li><a routerLink="/user/userdashboard" (click)="closeMenu()">Home</a></li>
+       <li><a routerLink="/user/availableClasses" (click)="closeMenu()">Available Classes</a></li>
+      <li><a routerLink="/user/bookedClasses" (click)="closeMenu()">Booked Classes</a></li>
+      <li><a routerLink="/user/trainers" (click)="closeMenu()">trainers</a></li>
+      <li><a routerLink="/user/plans" (click)="closeMenu()">plans</a></li>
+    
+    </ul>
+   </div>
+</nav>
+<div class="container mt-4">
+ <router-outlet></router-outlet>
+</div>

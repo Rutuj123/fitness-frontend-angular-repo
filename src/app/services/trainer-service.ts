@@ -14,4 +14,11 @@ export class TrainerService {
   getAll(){
     return this.http.get<any[]>(`${this.API}/trainers`);
   }
+  getMembershipGrowth(){
+    return this.http.get(`${this.API}/trainers/membership-growth`);
+  }
+
+  getVisitorStats(){
+    return this.http.get(`${this.API}/visitor/visitor-stats`);
+  }
 }

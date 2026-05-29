@@ -18,6 +18,7 @@ register(){
     this.router.navigate(['/login']);
   },
   error:()=>{
+   // console.log(this.err);
     alert("Error while restering")
   }
   });

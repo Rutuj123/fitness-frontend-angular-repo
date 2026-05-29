@@ -1,23 +1,4 @@
-<nav class="navbar">
-  <div class="container nav-wrap">
-
-    <div class="hamburger" (click)="toggleMenu()">
-      ☰
-    </div>
-
-    <ul class="nav-links" [class.active]="mobileMenu">
-      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
-      <li><a routerLink="/user/classes" (click)="closeMenu()">classes</a></li>
-      <li><a routerLink="/user/trainers" (click)="closeMenu()">trainers</a></li>
-      <li><a routerLink="/user/plans" (click)="closeMenu()">plans</a></li>
-    
-    </ul>
-   </div>
-</nav>
-<div class="container mt-4">
-  <h2>Welcome to Fitness Club 💪</h2>
-
-  <!-- <div class="row mt-4">
+ <!-- <div class="row mt-4">
     <div class="col-md-4" *ngFor="let f of features">
       <div class="card shadow">
         <div class="card-body">
@@ -33,5 +14,136 @@
       </div>
     </div>
   </div> -->
-  <router-outlet></router-outlet>
+   <h2>Welcome to Fitness Club 💪</h2>
+  <div class="container mt-4">
+
+  <!-- Top Cards -->
+  <div class="row g-3">
+
+    <!-- Membership -->
+    <div class="col-md-3">
+      <div class="card shadow p-3">
+
+        <h5>Membership</h5>
+
+        <p>
+          Status :
+          {{dashboard?.membershipStatus}}
+        </p>
+
+        <p>
+          Plan :
+          {{dashboard?.membershipPlan}}
+        </p>
+
+        <!-- <p>
+          Expiry :
+          {{dashboard?.expiryDate}}
+        </p>
+ -->
+      </div>
+    </div>
+
+    <!-- Attendance -->
+    <div class="col-md-3">
+      <div class="card shadow p-3">
+
+        <h5>Attendance</h5>
+
+        <h2>
+          {{dashboard?.attendanceCount}}
+        </h2>
+
+        <p>This Month</p>
+
+      </div>
+    </div>
+
+    <!-- Trainer -->
+    <!-- <div class="col-md-3">
+      <div class="card shadow p-3">
+
+        <h5>Trainer</h5>
+
+        <p>
+          {{dashboard?.trainerName}}
+        </p>
+
+        <button class="btn btn-primary btn-sm">
+          Contact
+        </button>
+
+      </div>
+    </div> -->
+
+    <!-- Weight -->
+    <div class="col-md-3">
+      <div class="card shadow p-3">
+
+        <h5>Weight Progress</h5>
+
+        <p>
+          Current :
+          {{dashboard?.currentWeight}} KG
+        </p>
+
+        <p>
+          Goal :
+          {{dashboard?.goalWeight}} KG
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Workout Table -->
+
+ <!--  <div class="card shadow mt-4 p-3">
+
+    <h4>Workout Plan</h4>
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let w of dashboard?.workouts">
+
+          <td>{{w.exerciseName}}</td>
+
+          <td>{{w.sets}}</td>
+
+          <td>{{w.reps}}</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div> -->
+
+</div>
+  <div class="container mt-4">
+
+  <div class="row">
+    
+    <div class="col-md-6">
+      <div class="card shadow p-3">
+        <h4>Attendance Per Month in a Current Year</h4>
+        <canvas id="attendanceChart"></canvas>
+      </div>
+    </div>
+
+
+  </div>
+
 </div>

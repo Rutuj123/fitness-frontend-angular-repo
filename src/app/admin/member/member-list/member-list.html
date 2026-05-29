@@ -15,6 +15,7 @@
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
+          <th>Age</th>
           <th>Membership</th>
           <th>Actions</th>
         </tr>
@@ -26,6 +27,7 @@
             <td>{{ m.name }}</td>
             <td>{{ m.email }}</td>
             <td>{{ m.phone }}</td>
+            <td>{{ m.age }}</td>
             <td>
               <span class="badge bg-success">
                 {{ m.membershipType }}
@@ -41,7 +43,7 @@
 
   <button
     class="btn btn-sm btn-danger"
-    (click)="confirmDelete(m.id)"
+    (click)="confirmDelete(m.userId)"
   >
     Delete
   </button>
@@ -95,10 +97,19 @@
           type="email"
           class="form-control"
           [(ngModel)]="selectedMember.email"
-          name="email"
+          name="email" disabled
         />
       </div>
+       <div class="mb-3">
+        <label>Age</label>
 
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedMember.age"
+          name="age"
+        />
+      </div>
       <div class="mb-3">
         <label>Phone</label>
 
@@ -119,8 +130,8 @@
           name="membershipType"
         >
           <option>Basic</option>
+          <option>Standard</option>
           <option>Premium</option>
-          <option>Elite</option>
         </select>
       </div>
 

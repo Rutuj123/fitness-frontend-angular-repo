@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h3>Gym Classes</h3>
+  <h3>Classes</h3>
 
   <div class="row mt-3">
     @for (c of classes; track c) {
@@ -7,7 +7,7 @@
         <div class="card shadow">
           <div class="card-body">
             <h5>{{ c.name }}</h5>
-            <p>Trainer: {{ c.trainer }}</p>
+            <p>Trainer: {{ c.trainerName }}</p>
             <p>Schedule: {{ c.schedule }}</p>
             @if (bookButton) {
               <button class="btn btn-success w-100"
@@ -27,3 +27,4 @@
     }
   </div>
 </div>
+ 

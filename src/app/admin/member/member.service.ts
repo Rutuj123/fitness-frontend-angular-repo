@@ -24,13 +24,25 @@ addMember(data:any){
   
   return this.http.post<any>(`${this.API}/auth/register`,data,{headers});
 }
-updateMember(data:any,id: number) {
-
+updateMember(data:any) {
+  console.log("update member..");
+  const token = localStorage.getItem('token');
+   const headers = new HttpHeaders ({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    });
   return this.http.put(
-    `${this.API}/auth/updateMember/${id}`,
+    `${this.API}/auth/updateMember`,
     data
   );
 
+}
+
+deleteMember(userId:number){
+  console.log("delete member...");
+  return this.http.delete(
+    `${this.API}/auth/${userId}`
+  );
 }
 getMemberByUserId(id: number) {
 

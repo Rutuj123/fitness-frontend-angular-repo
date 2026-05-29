@@ -23,7 +23,7 @@ this.auth.login(this.data).subscribe(res=>{
     this.router.navigate(['/trainer']);
   }
   if(res.role==='USER'){
-    this.router.navigate(['/userdashboard']);
+    this.router.navigate(['/user/']);
   }
 });
 }

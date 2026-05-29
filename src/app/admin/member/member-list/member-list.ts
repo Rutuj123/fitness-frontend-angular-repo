@@ -14,6 +14,9 @@ constructor(private memberService: MemberService){}
 members:any[]=[];
 loading=true;
 ngOnInit(): void {
+this.loadMembers();
+}
+loadMembers(){
   this.memberService.getAllMember().subscribe({
     next:data=>{
       this.members=data;
@@ -50,12 +53,14 @@ updateMember() {
 
   console.log(this.selectedMember);
 
-   this.memberService.updateMember(this.selectedMember,1).subscribe({
+   this.memberService.updateMember(this.selectedMember).subscribe({
        next:()=>{
  // this.router.navigate(['/member-list']);
  alert('Member edited successfully');
+ this.loadMembers();
        },
-       error:()=>{
+       error:(err)=>{
+        console.log(err);
   alert('Something Went Wrong');
        }
     })
@@ -82,7 +87,18 @@ deleteMember() {
 
   console.log(this.deleteMemberId);
 
-  // CALL DELETE API HERE
+  this.memberService.deleteMember(this.deleteMemberId).subscribe({
+    next:(res)=>{
+      console.log(res);
+   alert('Member deleted successfully');
+   this.loadMembers();
+    },
+    error:(err)=>{
+      console.log(err);
+   alert('Something went wrong..');
+   this.loadMembers();
+    }
+  })
 
   this.showDeleteModal = false;
 

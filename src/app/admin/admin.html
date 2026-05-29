@@ -6,8 +6,9 @@
 
 <div class="d-flex">
   
-  <!-- Sidebar -->
-  <div class="bg-dark text-white p-3" style="width: 220px; height: 700px">
+  <!-- Sidebar  height: auto;-->
+  <div class="bg-dark text-white p-3" style="width: 220px;  height: 700px;
+   ">
     <h5 class="mb-4">Admin Panel</h5>
 
     <ul class="nav flex-column">
@@ -48,9 +49,19 @@
           Class List
         </a>
       </li>
+       <li class="nav-item">
+        <a routerLink="/admin/bookedClassList" class="nav-link text-white">
+          Booked Class List
+        </a>
+      </li>
       <li class="nav-item">
         <a routerLink="/admin/paymentList" class="nav-link text-white">
          Payment Request
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/admin/attendance" class="nav-link text-white">
+          Attendance
         </a>
       </li>
     </ul>
@@ -59,8 +70,6 @@
   <!-- Page Content -->
   <div class="p-4 flex-fill">
     <router-outlet></router-outlet>
-    
-
   </div>
 
 </div>

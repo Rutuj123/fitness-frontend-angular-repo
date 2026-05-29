@@ -19,7 +19,7 @@ ngOnInit(): void {
       this.loading=false;
     },
     error:()=>{
-      alert("Failed to load members");
+      alert("Failed to load payment list");
       this.loading=false;
     }
   })
@@ -47,9 +47,8 @@ approve(payments: any) {
   alert('Something Went Wrong');
        }
     })
- 
-
 }
+
 reject(id: number) {
 
   this.deleteMemberId = id;

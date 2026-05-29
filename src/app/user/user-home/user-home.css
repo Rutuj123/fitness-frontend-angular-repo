@@ -1,0 +1,103 @@
+.navbar{
+  background:#a39696;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.nav-wrap{
+  height:80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  list-style:none;
+}
+.nav-links a{
+  text-decoration:none;
+  color:#2c11c7;
+  font-weight:600;
+}
+.login-btn {
+
+  width: 130px;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+ #ab0fad,
+    #dd2476
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+    0 8px 20px rgba(221, 36, 118, 0.35);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* HOVER EFFECT */
+
+.login-btn:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 28px rgba(221, 36, 118, 0.45);
+
+}
+
+/* CLICK EFFECT */
+
+.login-btn:active {
+
+  transform: scale(0.98);
+
+}
+
+/* SHINE ANIMATION */
+
+.login-btn::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 80px;
+  height: 10px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+
+  transition: 0.6s;
+}

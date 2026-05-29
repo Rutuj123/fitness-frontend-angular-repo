@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h3 class="mb-3">Class Booking Request</h3>
+  <h3 class="mb-3">Class Booking List</h3>
 
   @if (loading) {
     <div class="text-center">
@@ -12,15 +12,14 @@
       <thead class="table-dark">
         <tr>
             <th>#</th>
-          <th>Class Id</th>
-          <th>Class Name</th>
-          <th>User Id</th>
-          <th>User Name</th>
-         <th>Phone Number</th>
-          <th>Status</th>
-        
-           <th>Action</th>
-          
+          <th>classId</th>
+          <th>className</th>
+          <th>userId</th>
+          <th>userName</th>
+         <th>phoneNo</th>
+          <th>status</th>
+           <th>User Email</th>
+         
         </tr>
       </thead>
       <tbody>
@@ -33,20 +32,8 @@
             <td>{{ m.userName }}</td>
             <td>{{ m.phoneNo }}</td>
             <td>{{ m.status }}</td>
+           <td>{{ m.userEmail }}</td>
            
-           <td>
-  <button
-    class="btn btn-sm btn-primary me-2"
-    (click)="approve(m)">
-    Approve
-  </button>
-
-  <button
-    class="btn btn-sm btn-danger"
-    (click)="reject(m)">
-    Reject
-  </button>
-</td> 
           </tr>
          }
       </tbody>
