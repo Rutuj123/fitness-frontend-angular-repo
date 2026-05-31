@@ -10,6 +10,10 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class Admin {
 constructor(private auth : AuthService,private router : Router){}
+isSidebarOpen = false;
+toggleSidebar(){
+  this.isSidebarOpen = !this.isSidebarOpen;
+}
 logout(){
   this.auth.logout();
   this.router.navigate(['/login']);

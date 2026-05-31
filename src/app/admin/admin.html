@@ -1,76 +1,92 @@
-<nav class="navbar navbar-dark bg-dark px-4">
- <!--  <span class="navbar-brand">Gym Admin Panel</span> -->
-  <button class="btn btn-outline-light"
-          (click)="logout()">Logout</button>
+<nav class="navbar navbar-dark bg-dark px-3">
+  <h5 class="text-white mb-0">Admin Panel</h5>
+
+  <div class="d-flex align-items-center">
+    <!-- Mobile Menu Button -->
+    <button
+      class="btn btn-outline-light me-2 d-md-none"
+      (click)="toggleSidebar()">
+      ☰
+    </button>
+
+    <button class="btn btn-outline-light" (click)="logout()">
+      Logout
+    </button>
+  </div>
 </nav>
 
-<div class="d-flex">
-  
-  <!-- Sidebar  height: auto;-->
-  <div class="bg-dark text-white p-3" style="width: 220px;  height: 700px;
-   ">
-    <h5 class="mb-4">Admin Panel</h5>
+<div class="admin-layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar"
+       [class.mobile-open]="isSidebarOpen">
 
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a routerLink="/admin/adminDashboard" class="nav-link text-white">
+        <a routerLink="/admin/adminDashboard" class="nav-link">
           Dashboard
         </a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/admin/memberAdd" class="nav-link text-white">
+        <a routerLink="/admin/memberAdd" class="nav-link">
           Add Member
         </a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="/admin/memberList" class="nav-link text-white">
+        <a routerLink="/admin/memberList" class="nav-link">
           Member List
         </a>
       </li>
+
       <li class="nav-item">
-        <a routerLink="/admin/trainerAdd" class="nav-link text-white">
-           Add Trainer
+        <a routerLink="/admin/trainerAdd" class="nav-link">
+          Add Trainer
         </a>
       </li>
+
       <li class="nav-item">
-        <a routerLink="/admin/trainerList" class="nav-link text-white">
+        <a routerLink="/admin/trainerList" class="nav-link">
           Trainer List
         </a>
       </li>
+
       <li class="nav-item">
-        <a routerLink="/admin/classAdd" class="nav-link text-white">
+        <a routerLink="/admin/classAdd" class="nav-link">
           Class Add
         </a>
       </li>
+
       <li class="nav-item">
-        <a routerLink="/admin/classList" class="nav-link text-white">
+        <a routerLink="/admin/classList" class="nav-link">
           Class List
         </a>
       </li>
-       <li class="nav-item">
-        <a routerLink="/admin/bookedClassList" class="nav-link text-white">
+
+      <li class="nav-item">
+        <a routerLink="/admin/bookedClassList" class="nav-link">
           Booked Class List
         </a>
       </li>
+
       <li class="nav-item">
-        <a routerLink="/admin/paymentList" class="nav-link text-white">
-         Payment Request
+        <a routerLink="/admin/paymentList" class="nav-link">
+          Payment Request
         </a>
       </li>
+
       <li class="nav-item">
-        <a routerLink="/admin/attendance" class="nav-link text-white">
+        <a routerLink="/admin/attendance" class="nav-link">
           Attendance
         </a>
       </li>
     </ul>
   </div>
 
-  <!-- Page Content -->
-  <div class="p-4 flex-fill">
+  <!-- Content -->
+  <div class="content">
     <router-outlet></router-outlet>
   </div>
 
 </div>
-
